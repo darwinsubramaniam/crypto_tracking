@@ -9,6 +9,14 @@ import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
+import { DepositList } from "./deposit/DepositList";
+import { DepositCreate } from "./deposit/DepositCreate";
+import { DepositEdit } from "./deposit/DepositEdit";
+import { DepositShow } from "./deposit/DepositShow";
+import { CurrencyList } from "./currency/CurrencyList";
+import { CurrencyCreate } from "./currency/CurrencyCreate";
+import { CurrencyEdit } from "./currency/CurrencyEdit";
+import { CurrencyShow } from "./currency/CurrencyShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -41,6 +49,20 @@ const App = (): React.ReactElement => {
           edit={UserEdit}
           create={UserCreate}
           show={UserShow}
+        />
+        <Resource
+          name="Deposit"
+          list={DepositList}
+          edit={DepositEdit}
+          create={DepositCreate}
+          show={DepositShow}
+        />
+        <Resource
+          name="Currency"
+          list={CurrencyList}
+          edit={CurrencyEdit}
+          create={CurrencyCreate}
+          show={CurrencyShow}
         />
       </Admin>
     </div>

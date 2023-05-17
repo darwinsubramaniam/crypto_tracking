@@ -17,3 +17,21 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Deposit {
+  amount     Float
+  createdAt  DateTime @default(now())
+  currency   Currency @relation(fields: [currencyId], references: [id])
+  currencyId String
+  id         String   @id @default(cuid())
+  updatedAt  DateTime @updatedAt
+}
+
+model Currency {
+  createdAt DateTime  @default(now())
+  deposits  Deposit[]
+  id        String    @id @default(cuid())
+  name      String    @unique
+  short     String    @unique
+  updatedAt DateTime  @updatedAt
+}
